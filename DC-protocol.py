@@ -11,8 +11,8 @@ if __name__ == "__main__":
         dataUser = hex(int('0000', 16) ^ int(secretBob, 16) ^ int(secretAlice, 16))
         message = hex(int(dataAlice, 16) ^ int(dataBob, 16) ^ int(dataUser, 16))
         if(message == '0x0'):
-            message = '0000'
-        print('b=0:\t', dataUser[2:] + message)
+            message = '0x0000'
+        print('b=0:\t', dataUser[2:] + message[2:])
 
     elif(b == 1):
         dataUser = hex(int(userMessage, 16) ^ int(secretAlice, 16) ^ int(secretBob, 16))
